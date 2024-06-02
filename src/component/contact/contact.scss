@@ -1,0 +1,112 @@
+@import "../../app.scss";
+
+.contact{
+  max-width: 1366px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  @include tablet{
+    flex-direction: column;
+    gap: 40px;
+  }
+  @include desktop{
+    max-width: 1024px;
+  }
+
+  .textContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include tablet{
+      gap: 10px;
+      text-align: center;
+      padding-top: 10vh;
+      justify-content: end;
+    }
+
+    h2{
+      font-size: 100px;
+      line-height: 88px;
+      @include tablet{
+        font-size: 72px;
+      }
+      @include mobile{
+        font-size: 50px;
+        line-height: 40px;
+        padding-block: 10px;
+      }
+    }
+
+    p{
+      font-weight: 300;
+    }
+  }
+  .formContainer{
+    flex: 1;
+    position: relative;
+    flex-wrap: wrap;
+
+    .phoneSVG{
+      position: absolute;
+      top: 0;
+      margin: auto;
+      z-index: -1;
+      cursor: pointer;
+
+      svg{
+        @include mobile{
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 10;
+      @include tablet{
+        flex-direction: row;
+        width: 620px;
+      }
+
+      .inputForm{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @include tablet{
+          flex: 2;
+        }
+
+        input,textarea{
+      	 border: 1px solid white;
+      	 background: transparent;
+      	 border-radius: 10px;
+      	 padding: 20px;
+      	 color: white;
+        }
+
+        input:focus,textarea:focus{
+      	 color:  white;
+      	 font-size: 20px;
+        }
+      }
+
+      button{
+        background-color: orange;
+        padding: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        @include tablet{
+         height: 8vh; 
+        }
+      }
+    }
+  }
+}
