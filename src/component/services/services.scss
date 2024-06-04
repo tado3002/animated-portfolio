@@ -10,6 +10,10 @@
     justify-content: unset;
     gap: 80px;
   }
+  @include mobile{
+    justify-content: space-evenly;
+    gap: unset;
+  }
 
   .textContainer{
     flex: 1; 

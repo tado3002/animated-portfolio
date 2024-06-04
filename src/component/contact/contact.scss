@@ -8,14 +8,18 @@
   align-items: center;
   margin: auto;
   justify-content: center;
+  @include desktop{
+    max-width: 1024px;
+  }
   @include tablet{
     flex-direction: column;
     gap: 40px;
   }
-  @include desktop{
-    max-width: 1024px;
-  }
-
+  @include mobile{
+    justify-content: center;
+    gap: unset;
+  } 
+ 
   .textContainer{
     flex: 1;
     display: flex;
@@ -26,6 +30,9 @@
       text-align: center;
       padding-top: 10vh;
       justify-content: end;
+    }
+    @include mobile{
+      justify-content: center;
     }
 
     h2{
@@ -74,6 +81,11 @@
         flex-direction: row;
         width: 620px;
       }
+      @include mobile{
+        flex-direction: column;
+        width: 100vw;
+        padding-inline: 4px;
+      }
 
       .inputForm{
         display: flex;
@@ -81,6 +93,9 @@
         gap: 20px;
         @include tablet{
           flex: 2;
+        }
+        @include mobile{
+          flex: unset;
         }
 
         input,textarea{
